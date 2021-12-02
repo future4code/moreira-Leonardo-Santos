@@ -118,3 +118,128 @@ console.log(`O segundo número é divisível pelo primeiro ${result4}`);
 
 // DESAFIOOOOO:
 
+// Atividade 1:
+
+/* a.
+ *  pedir por uma uma temperatura em Fahrenheit -> tF;
+ *  converter tF para Kelvin -> tK;
+ *  imprimir tK no console acompanhado de sua unidade - "tK°K"
+ */ 
+const tF = Number(prompt("Insira um valor de temperatura em Fahrenheit:"));
+
+let tK = (tF - 32) * 5/9 + 273.15;
+
+console.log(`${tF}°F === ${tK.toString().replace('.', ',')}°K`);
+
+/* b.
+ *  pedir por uma uma temperatura em Celsius -> tCe;  
+ *  converter tCe para Fahrenheit -> tFa;
+ *  imprimir tFa no console acompanhado de sua unidade - "tFa°F"
+ */
+const tCe = Number(prompt("Insira um valor de temperatura em Celsius:"));
+
+let tFa = (tCe * 9/5) + 32;
+
+console.log(`${tCe}°C === ${tFa.toString().replace(".", ",")}°F`);
+
+/* c.
+ *  pedir por uma uma temperatura em Celsius -> tC;  
+ *  converter tC para Fahrenheit e Kelvin-> tF e tK;
+ *  imprimir tF e tK no console acompanhados de suas unidades - "tF°F e tK°K"  
+ */
+const tCel = Number(prompt("Insira um valor de temperatura em Celsius:"));
+
+let tFah = (tCel * 9/5) + 32;
+let tKel = tCel + 273.15;
+
+console.log(`${tCel}°C === ${tFah.toString().replace(".", ",")}°F e ${tKel.toString().replace(".", ",")}°K`)
+
+/* d.
+ *  fiz dessa forma para todas as outras propostas a cima ∆
+ */
+
+// Atividade 2:
+
+/* a.
+ *  pedir por uma quantidade, em número, de quilowatts -> kWatts;
+ *  realizar cálculo de quanto é gasto em um mês dado o consumo na kWatts -> bill = kWatts * 0.05;
+ *  imprimir bill no console;
+ */ 
+const kWatts = Number(prompt('insira o consumo de killowatts por hora de sua residência:'));
+
+let bill = kWatts * 0.05;
+
+console.log(`Sua conta será no valor de: R$ ${bill.toFixed(2).toString().replace(".", ",")}`);
+
+/* b. 
+ *  diminuir de bill o valor de 15% de kWatts
+ *  bill -= 15 * kWatts / 100;
+ */
+
+bill = 15 * bill / 100;
+
+console.log(`Com 15% de desconto ficará: R$ ${bill.toFixed(2).toString().replace(".", ",")}`);
+
+// Atividade 3:
+
+/* a.
+ *  pedir ao usr por um número representando um peso em libras -> lbs;
+ *  realizar o cálculo de conversão de libras para kilogramas -> lbs / 2.205;
+ *  imprimir resultado no console -> lbs+"lb equivalem a "+"kg";
+ */
+const lbs = Number(prompt("insira um valor de massa em libras:"));
+
+let kgs = lbs / 2.205;
+
+console.log(`${lbs}lb equivalem a ${kgs.toFixed(4).toString().replace('.', ',')}kg`);
+
+/* b.
+ *  pedir ao usuário um valor representando onça(oz) -> ozs;
+ *  realizar o calculo de conversão tambem para kg -> oz / 35,374;
+ *  imprimir resultados no console;
+ */
+const ozs = Number(prompt("insira um valor de massa em onças:"));
+
+kgs = ozs / 35.374;
+
+console.log(`${ozs}oz equivalem a ${kgs.toFixed(4).toString().replace('.', ',')}kg`);
+
+/* c.
+ * milhas para metro -> miles * 1609;
+ */
+const miles = Number(prompt("insira um valor de distancia em milhas:"));
+
+let meters = miles * 1609;
+
+console.log(`${miles}mi equivalem a ${meters.toFixed(4).toString().replace('.', ',')}m`);
+
+/* d.
+ * pés para metros -> feet / 3,281;
+ */
+const feet = Number(prompt("insira um valor de distancia em pés:"));
+
+meters = feet / 3.281;
+
+console.log(`${feet}ft equivalem a ${meters.toFixed(4).toString().replace('.', ',')}m`);
+
+/* e.
+ * galões para litros -> gals * 3,785;
+ */
+const gals = Number(prompt("insira um valor de volume em galões:"));
+
+let li = gals * 3.785;
+
+console.log(`${gals}gal equivalem a ${li.toFixed(4).toString().replace('.', ',')}l`);
+
+/* f.
+ * xícaras para litros -> cups / 3,52;
+ */
+const cups = Number(prompt("insira um valor de volume em xícaras:"));
+
+li = cups / 3.52;
+
+console.log(`${cups}xic equivalem a ${li.toFixed(4).toString().replace('.', ',')}l`);
+
+/* g.
+ *  Aplicada a todas as propostas a cima ∆
+ */
