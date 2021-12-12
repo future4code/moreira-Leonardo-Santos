@@ -25,8 +25,10 @@ const startGame = (gameName, game) => {
    if (usrChoice === true) {
       return game();
    }
+   else {
+      return msg;
+   }
 
-   return msg;
 };
 
 const blackjackAgainstPc = () => {
@@ -58,14 +60,22 @@ const blackjackAgainstPc = () => {
    if (userPts === machinePts) {
       playResult = 'Empate!';
    }
-   else if (userPts > machinePts) {
+   else if (userPts > machinePts && userPts < 21) {
       playResult = 'O usuário ganhou!';
    }
-   else {
+   else if (userPts < machinePts && machinePts < 21) {
       playResult = 'O computador ganhou!';
    }
+   else if (userPts > 21) {
+      playResult = 'Jogador estourou! O computador venceu!'
+   }
+   else if (machinePts > 21) {
+      playResult = 'Computador estourou! O jogador venceu!'
+   }
 
-   finalMsg = console.log(`${playLog}\n${playResult}`);
+   finalMsg = `${playLog}\n${playResult}`;
+
+   console.log(finalMsg);
 
    return finalMsg;
 };
