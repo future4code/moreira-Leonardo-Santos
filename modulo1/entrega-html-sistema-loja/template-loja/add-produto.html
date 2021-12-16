@@ -1,55 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styleAddProd.css">
     <title>Adicionar Produto</title>
 </head>
-<body>
-    <div>
-        <p>Nome da lojinha</p>
-    </div>
+
+<body class="pg">
+    <header class="pg__head">
+        <h1 class="head__title">Nome da lojinha</h1>
+    </header>
     
-    <div>
+    <nav class="pg__menu">
         <a href="./index.html">Página Inicial</a>
         <a href="./ctrl-estoque.html">Controle de Estoque</a>
         <a href="./add-produto.html">Adicionar Produto</a>
         <a href="./funcionarios.html">Funcionários</a>
-    </div>
+    </nav>
 
     
-    <h2>Adicionar Produto</h2>
-    <form action="">
-        <div>
+    <h2 class="mainContent__title">Adicionar Produto</h2>
+    <form action="" class="mainContent__form">
+        <fieldset class="form-fieldsets">
             <label for="link-foto">Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
-        </div>
+        </fieldset>
         
-        <div>
+        <fieldset class="form-fieldsets">
             <label for="descricao">Descrição do produto: </label>
             <!-- Adicione o id apropriado para o input abaixo -->
-            <input type="text" id="descricao" name="descrição">
-        </div>
+            <input type="text" id="descricao" name="descricao">
+        </fieldset>
         
-        <div>
+        <fieldset class="form-fieldsets">
             <label for="preco">Preço (em R$): </label>
             <!-- Adicione o id apropriado e o type para receber números abaixo -->
-            <input type="number" id="preco" name="preço">
-        </div>
+            <input type="number" id="preco" name="preco">
+        </fieldset>
         
-        <div>
+        <fieldset class="form-fieldsets">
             <!-- Preencha as propriedades necessárias para os elementos abaixo -->
             <label for="qtd-disponivel">Quantidade disponível: </label>
-            <input type="number" id="qtd-disponivel" nome="Quantidade disponível">
-        </div>
+            <input type="number" id="qtd-disponivel" nome="qtd-disponive">
+        </fieldset>
 
-        <div class="form-add">
+        <fieldset class="form-add">
             <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
             <button type="submit" value="Submit">Adicionar</button>
-        </div>
+        </fieldset>
 
     </form>
+
+    <footer class="pg__foot">
+        <p class="foot__text"><a href="#">gitHub</a></p>
+    </footer>
 
 </body>
 </html>
