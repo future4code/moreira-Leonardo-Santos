@@ -80,6 +80,11 @@ div img {
     color: white;
     padding: 3rem;
 }
+#container-de-descricao>p {
+    display: block;
+    width: 13rem;
+    margin: 0 auto;
+}
 
 #container-de-descricao>ol {
     padding: 15px 0px;
