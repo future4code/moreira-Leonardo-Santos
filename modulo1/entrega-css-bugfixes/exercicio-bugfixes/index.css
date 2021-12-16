@@ -134,6 +134,10 @@ td button {
     height: 100px;
 }
 
+.icone {
+    width: 1.5rem;
+    background: none;
+}
 
 #back-button {
     background-color: white;
