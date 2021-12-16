@@ -142,3 +142,125 @@ const whitchAreTheBiggerNLesserNums = (arr) => {
 };
 
 whitchAreTheBiggerNLesserNums(arrayOriginal);
+
+// Desafiooo
+
+//1->
+const whichNumImThinkin = () => {
+    /* a->
+     */
+    const correctNum = Number(prompt('Para começar um jogador insere aqui um número inteiro maior que 0, sem falar para o outro jogador:'));
+
+    alert('Vamos Jogar!');
+    console.log('Vamos Jogar!');
+
+    /* b->
+     */
+    let kick = Number(prompt('Em qual número eu estou pensando?'));
+
+    let kickNumMsg = `O número chutado foi: ${kick}`;
+    let victoryMsg = 'Acertou!!';
+
+    let failMsg = 'Errrrrrrroooouuu,';
+    let msg = '';
+
+    let tryOuts = 1;
+    while (kick !== correctNum) {
+
+        alert(kickNumMsg);
+        console.log(kickNumMsg);
+
+        if (kick > correctNum) {
+
+            msg = `é menor`; 
+        }
+        else if (kick < correctNum) {
+            msg = `é maior`;
+        }
+        
+        kick = Number(prompt(`${failMsg} ${msg} Tente outra vez:`));
+        console.log(`${failMsg} ${msg} Tente outra vez:`);
+
+        kickNumMsg = `O número chutado foi: ${kick}`;
+
+        tryOuts += 1;
+    }
+
+    let tryOutsMsg = `O número de tentativas foi: ${tryOuts}`;
+
+    if (kick === correctNum) {
+        alert(kickNumMsg)
+        console.log(kickNumMsg);
+        alert(`${victoryMsg}\n${tryOutsMsg}`);
+        console.log(`${victoryMsg}\n${tryOutsMsg}`);
+    }
+
+    return correctNum;
+};
+
+whichNumImThinkin();
+
+//2->
+const getRandomNumber = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.ceil(max);
+
+    return Math.floor(Math.random() * (max - min + 1)) + min; 
+};
+
+
+const whichNumThePcIsThinkin = () => {
+    /* a->
+     */
+    alert('Para começar o computador escolherá um número inteiro maior que 0!');
+
+    const correctNum = getRandomNumber(1, 100);
+
+    alert('Vamos Jogar!');
+    console.log('Vamos Jogar!');
+
+    /* b->
+     */
+    let kick = Number(prompt('Em qual número eu estou pensando?'));
+
+    let kickNumMsg = `O número chutado foi: ${kick}`;
+    let victoryMsg = 'Acertou!!';
+
+    let failMsg = 'Errrrrrrroooouuu,';
+    let msg = '';
+
+    let tryOuts = 1;
+    while (kick !== correctNum) {
+
+        alert(kickNumMsg);
+        console.log(kickNumMsg);
+
+        if (kick > correctNum) {
+
+            msg = `é menor`; 
+        }
+        else if (kick < correctNum) {
+            msg = `é maior`;
+        }
+        
+        kick = Number(prompt(`${failMsg} ${msg} Tente outra vez:`));
+        console.log(`${failMsg} ${msg} Tente outra vez:`);
+
+        kickNumMsg = `O número chutado foi: ${kick}`;
+
+        tryOuts += 1;
+    }
+
+    let tryOutsMsg = `O número de tentativas foi: ${tryOuts}`;
+
+    if (kick === correctNum) {
+        alert(kickNumMsg)
+        console.log(kickNumMsg);
+        alert(`${victoryMsg}\n${tryOutsMsg}`);
+        console.log(`${victoryMsg}\n${tryOutsMsg}`);
+    }
+
+    return correctNum;
+};
+
+whichNumThePcIsThinkin();
