@@ -9,6 +9,11 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -38,17 +43,21 @@ div img {
 }
 
 .botao-amarelo {
+    display: block;
+    margin: 0 auto;
     background-color: #ffaf43;
     width: 250px;
     height: 40px;
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    cursor: pointer;
 }
 
 .botao-amarelo:hover {
     background-color: #c44f00;
 }
+
 
 .container {
     height: 500px;
