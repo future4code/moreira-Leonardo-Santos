@@ -1,0 +1,102 @@
+/*VARIABLES*/
+
+:root {}
+
+
+/*APPLY-TO-ALL*/
+
+.pg {
+    text-align: center;
+}
+
+.texts {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    letter-spacing: 0.25rem;
+    line-height: 1.4;
+}
+
+
+/*HEADER*/
+
+.pg__head {
+    padding: 2rem;
+    background: rgba(95, 50, 167, 0.13);
+}
+
+.head__title {
+    font-size: 2.1rem;
+    font-variant: small-caps;
+    margin-bottom: 1.2rem;
+    color: rgba(10, 10, 10, 75%);
+}
+
+.title-name {
+    font-weight: 600;
+    color: rgba(95, 50, 167, 0.822);
+}
+
+.head__text {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    color: rgba(10, 10, 10, 85%);
+}
+
+
+/*NAV-MENU*/
+
+.pg__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1.5rem;
+    background: rgba(225, 209, 250, 0.404);
+}
+
+.pg__menu a {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: rgba(95, 50, 167, 0.822);
+    font-weight: 600;
+}
+
+.pg__menu a:visited {
+    color: rgb(95, 50, 167);
+}
+
+
+/*-SECT*/
+
+.pg__mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    background: rgba(95, 50, 167, 0.158);
+}
+
+.mainContent__title {
+    font-size: 1.6rem;
+    font-variant: small-caps;
+    letter-spacing: 0.25rem;
+    margin: 2rem;
+}
+
+.mainContent__text {
+    text-align: left;
+    margin: 1.5rem;
+}
+
+
+/*FOOTER*/
+
+.pg__foot {
+    padding: 2rem 0 1.5rem 0;
+    background: rgba(95, 50, 167, 0.404);
+}
+
+.foot__text a {
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+}
