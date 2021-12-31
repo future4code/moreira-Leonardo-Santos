@@ -21,9 +21,14 @@
     font-weight: 800;
 }
 
-.subtitles {}
+.subtitles {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+}
 
-.texts {}
+.texts {
+    font-size: 1.5rem;
+}
 
 
 /*HEADER*/
@@ -64,8 +69,40 @@
     letter-spacing: 0.3rem;
 }
 
+.menu_links a:hover {
+    color: rgb(0 0 0);
+}
+
 
 /*MAIN-CONTENT*/
+
+.pg__mainContent {
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContent__sections {
+    border: 1px solid rgb(104, 35, 160);
+    border-radius: 0 1rem 1rem 0;
+    padding: 1rem;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContent__sections:nth-of-type(1) {
+    border-right: none;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.mainContent__titles {
+    width: 300px;
+    margin-bottom: 1.5rem;
+}
 
 
 /*FOOTER*/

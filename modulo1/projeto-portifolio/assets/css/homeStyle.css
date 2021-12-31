@@ -21,9 +21,14 @@
     font-weight: 800;
 }
 
-.subtitles {}
+.subtitles {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+}
 
-.texts {}
+.texts {
+    font-size: 1.5rem;
+}
 
 
 /*HEADER*/
@@ -64,11 +69,18 @@
     letter-spacing: 0.3rem;
 }
 
+.menu_links a:hover {
+    color: rgb(0 0 0);
+}
+
 
 /*MAIN-CONTENT*/
 
 .pg__mainContent {
     margin: 6rem 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
 
 .mainContent__imgContainer {}
@@ -80,9 +92,15 @@
     border-radius: 0 2rem 0 2rem;
 }
 
-.mainContent__title {}
+.mainContent__textWrapper {}
 
-.mainContent__texts {}
+.mainContent__title {
+    text-align: end;
+}
+
+.mainContent__texts {
+    text-align: justify;
+}
 
 
 /*FOOTER*/
