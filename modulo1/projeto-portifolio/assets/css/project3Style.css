@@ -76,6 +76,43 @@
 
 /*MAIN-CONTENT*/
 
+.pg__mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.mainContent__imgNPoint {}
+
+.mainContent__imgNPoint img {
+    width: 45vw;
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 0.7rem;
+}
+
+.mainContent__imgNPoint .pointer {
+    width: 2rem;
+    height: 2rem;
+    color: rgba(87, 16, 109, 0.808);
+    position: absolute;
+    font-size: 5rem;
+    left: 2rem;
+    top: 50vh;
+    text-decoration: none;
+}
+
+.mainContent__imgNPoint .pointer:hover {
+    color: rgba(146, 54, 135, 0.87);
+    font-size: 6rem;
+}
+
+.mainContent__texts {}
+
+.linkToProject {}
+
 
 /*FOOTER*/
 

@@ -76,6 +76,51 @@
 
 /*MAIN-CONTENT*/
 
+.pg__mainContent {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContent__card {
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.5px 3.8px 0.2px;
+    width: 25rem;
+    text-align: center;
+}
+
+.mainContent__card:hover {
+    box-shadow: 0 0.3px 3.8px 0.1px seashell;
+}
+
+.card__titles {
+    font-size: 1.5rem;
+    margin: 1.5rem auto;
+    width: 10rem;
+}
+
+.mainContent__card img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 0.3rem;
+    object-fit: cover;
+}
+
+.card__checkBtn {
+    display: block;
+    margin: 1.5rem auto;
+    border: 2px solid rgba(93, 28, 121, 0.911);
+    border-radius: 0.3rem;
+    height: 2.5rem;
+    width: 10rem;
+    padding: 0.6rem;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.897);
+}
+
 
 /*FOOTER*/
 
