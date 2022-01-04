@@ -5,76 +5,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="" content="">
-    <meta name="" content="">
+
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Confeitaria</title>
 </head>
 
-<body>
+<body class="pg">
+
     <!--HEADER-->
-    <header>
-        <img src="https://icons-for-free.com/iconfiles/png/512/cake-1321215613168069161.png" alt="icone de bolinho">
-        <h1>Confeitaria</h1>
-        <button type="button">Login</button>
+    <header class="pg__head">
+        <div class="head__iconAndTitle">
+            <img class="icons head__icon" src="https://icons-for-free.com/iconfiles/png/512/cake-1321215613168069161.png" alt="icone de bolinho">
+            <h1 class="head__title">Confeitaria</h1>
+        </div>
+        <button class="head__logBtn" type="button">Login</button>
     </header>
 
     <!--MENU-->
-    <nav>
-        <ul>
-            <li>
-                <p><img src="https://cdn2.iconfinder.com/data/icons/pittogrammi/142/65-512.png" alt="icone de casinha"> Home</p><img src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png" alt="icone de seta">
-            </li>
-            <li>
-                <p><img src="https://cdn.onlinewebfonts.com/svg/img_480095.png" alt="icone de balinhas"> Produtos
-                </p><img src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png" alt="icone de seta">
-            </li>
-            <li>
-                <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Ic_shopping_cart_48px.svg/1024px-Ic_shopping_cart_48px.svg.png" alt="icone de carrinho">Carrinho
-                </p><img src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png" alt="icone de seta">
-            </li>
-            <li>
-                <p><img src="https://cdn.iconscout.com/icon/free/png-512/account-profile-avatar-man-circle-round-user-30452.png" alt="icone de perfil"> Perfil
-                </p><img src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png" alt="icone de seta">
-            </li>
-        </ul>
-    </nav>
+    <div class="menu-main-wrapper">
+        <nav class="pg__sideMenu">
+            <ul class="sideMenu__linksContainer">
+                <li class="links">
+                    <a href="">
+                        <p><img class="icons" src="https://cdn2.iconfinder.com/data/icons/pittogrammi/142/65-512.png" alt="icone de casinha"> Home</p><img class="icons" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png"
+                            alt="icone de seta"></a>
+                </li>
+                <li class="links">
+                    <a href="">
+                        <p><img class="icons" src="https://cdn.onlinewebfonts.com/svg/img_480095.png" alt="icone de balinhas"> Produtos
+                        </p><img class="icons" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png" alt="icone de seta"></a>
+                </li>
+                <li class="links">
+                    <a href="">
+                        <p><img class="icons" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Ic_shopping_cart_48px.svg/1024px-Ic_shopping_cart_48px.svg.png" alt="icone de carrinho">Carrinho
+                        </p><img class="icons" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png" alt="icone de seta"></a>
+                </li>
+                <li class="links">
+                    <a href="">
+                        <p><img class="icons" src="https://cdn.iconscout.com/icon/free/png-512/account-profile-avatar-man-circle-round-user-30452.png" alt="icone de perfil"> Perfil
+                        </p><img class="icons" src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png" alt="icone de seta"></a>
+                </li>
+            </ul>
+        </nav>
 
-    <!--MAIN-CONTENT-->
-    <main>
-        <div><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
-            <h2>Bolo de Chocolate</h2>
-            <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
-        </div>
-        <div><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morangos">
-            <h2>Bolo de Chocolate</h2>
-            <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
-        </div>
-        <div><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
-            <h2>Bolo de Chocolate</h2>
-            <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
-        </div>
-        <div><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
-            <h2>Bolo de Chocolate</h2>
-            <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
-        </div>
-        <div><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
-            <h2>Bolo de Chocolate</h2>
-            <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
-        </div>
-        <div><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
-            <h2>Bolo de Chocolate</h2>
-            <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
-        </div>
-        <div><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
-            <h2>Bolo de Chocolate</h2>
-            <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
-        </div>
-    </main>
+        <!--MAIN-CONTENT-->
+        <main class="pg__mainContent">
+            <div class="mainContent__card"><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
+                <h2>Bolo de Chocolate</h2>
+                <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
+            </div>
+            <div class="mainContent__card"><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morangos">
+                <h2>Bolo de Chocolate</h2>
+                <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
+            </div>
+            <div class="mainContent__card"><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
+                <h2>Bolo de Chocolate</h2>
+                <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
+            </div>
+            <div class="mainContent__card"><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
+                <h2>Bolo de Chocolate</h2>
+                <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
+            </div>
+            <div class="mainContent__card"><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
+                <h2>Bolo de Chocolate</h2>
+                <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
+            </div>
+            <div class="mainContent__card"><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
+                <h2>Bolo de Chocolate</h2>
+                <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
+            </div>
+            <div class="mainContent__card"><img src="https://casaefesta.com/wp-content/uploads/2019/05/bolos-decorados-para-festas-fotos-inspiradoras-48.jpg" alt="Bolo de chocolate com morango">
+                <h2>Bolo de Chocolate</h2>
+                <p>Delicioso bolo de chocolate molhadinho decorado com morangos</p>
+            </div>
+        </main>
+    </div>
 
     <!--FOOTER-->
-    <footer>
+    <footer class="pg__foot">
         <p>Bolos deliciosos feitos com muito carinho <i class="fas fa-heart"></i></p>
     </footer>
 
