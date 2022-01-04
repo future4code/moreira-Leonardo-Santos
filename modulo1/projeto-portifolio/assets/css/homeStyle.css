@@ -92,10 +92,14 @@
     border-radius: 0 2rem 0 2rem;
 }
 
-.mainContent__textWrapper {}
+.mainContent__textWrapper {
+    width: 400px;
+    margin: 1rem;
+}
 
 .mainContent__title {
     text-align: end;
+    margin: 2rem;
 }
 
 .mainContent__texts {

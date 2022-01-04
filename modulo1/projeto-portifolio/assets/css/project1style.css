@@ -82,12 +82,14 @@
     justify-content: center;
     align-items: center;
     height: 50vh;
+    margin-top: 9rem;
+    text-align: center;
 }
 
 .mainContent__imgNPoint {}
 
 .mainContent__imgNPoint img {
-    width: 45vw;
+    width: 28.75rem;
     height: 40vh;
     object-fit: cover;
     border-radius: 0.7rem;
@@ -109,9 +111,23 @@
     font-size: 6rem;
 }
 
-.mainContent__texts {}
+.mainContent__texts {
+    display: flex;
+    flex-direction: column;
+    width: 28.75rem;
+    padding: 2rem;
+}
 
-.linkToProject {}
+.linkToProject {
+    text-decoration: none;
+    margin: 2rem;
+    color: rgb(255, 249, 224);
+    font-size: 1.4rem;
+}
+
+.linkToProject:hover {
+    color: #000;
+}
 
 
 /*FOOTER*/

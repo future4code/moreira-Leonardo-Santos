@@ -88,10 +88,12 @@
 .mainContent__sections {
     border: 1px solid rgb(104, 35, 160);
     border-radius: 0 1rem 1rem 0;
-    padding: 1rem;
     width: 500px;
+    height: 600px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .mainContent__sections:nth-of-type(1) {
@@ -100,8 +102,30 @@
 }
 
 .mainContent__titles {
-    width: 300px;
+    width: 100%;
     margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(104, 35, 160);
+    padding: 2rem;
+}
+
+.mainContent__sections ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+    width: 600px;
+}
+
+.mainContent__sections ul li {
+    border-bottom: 1px solid rgb(104, 35, 160);
+    width: 80%;
+    padding: 0;
+    height: 8rem;
+}
+
+.mainContent__sections ul li:last-child {
+    border: none;
 }
 
 
