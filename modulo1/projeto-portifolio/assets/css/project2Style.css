@@ -1,0 +1,159 @@
+/*VARIABLES*/
+
+:root {}
+
+
+/*APPLY-TO-ALL*/
+
+.pg {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: rgb(231, 153, 222);
+    background: linear-gradient(90deg, rgba(248, 99, 231, 0.87) 16%, rgba(170, 15, 236, 0.774) 58%, rgba(169, 51, 253, 0.739) 82%);
+}
+
+.titles {
+    font-size: 1.9rem;
+    text-align: center;
+    letter-spacing: 0.6rem;
+    color: rgb(255, 249, 224);
+    font-weight: 800;
+}
+
+.subtitles {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+}
+
+.texts {
+    font-size: 1.5rem;
+}
+
+
+/*HEADER*/
+
+.pg__head {
+    background: rgba(0, 0, 0, 0.164);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.head__title {}
+
+
+/*MENU*/
+
+.pg__menu {
+    background: rgba(87, 16, 109, 0.164);
+}
+
+.links__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
+}
+
+.menu_links {
+    font-size: 1.3rem;
+}
+
+.menu_links a {
+    text-decoration: none;
+    color: rgb(255, 249, 224);
+    font-weight: 100;
+    cursor: pointer;
+    letter-spacing: 0.3rem;
+}
+
+.menu_links a:hover {
+    color: rgb(0 0 0);
+}
+
+
+/*MAIN-CONTENT*/
+
+.pg__mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-top: 9rem;
+    text-align: center;
+}
+
+.mainContent__imgNPoint {}
+
+.mainContent__imgNPoint img {
+    width: 28.75rem;
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 0.7rem;
+}
+
+.mainContent__imgNPoint .pointer1,
+.mainContent__imgNPoint .pointer2 {
+    width: 2rem;
+    height: 2rem;
+    color: rgba(87, 16, 109, 0.808);
+    position: absolute;
+    font-size: 5rem;
+    right: 2rem;
+    top: 50vh;
+    text-decoration: none;
+}
+
+.mainContent__imgNPoint .pointer1 {
+    left: 2rem
+}
+
+.mainContent__imgNPoint .pointer1:hover,
+.mainContent__imgNPoint .pointer2:hover {
+    color: rgba(146, 54, 135, 0.87);
+    font-size: 6rem;
+}
+
+.mainContent__texts {
+    display: flex;
+    flex-direction: column;
+    width: 28.75rem;
+    padding: 2rem;
+}
+
+.linkToProject {
+    text-decoration: none;
+    margin: 2rem;
+    color: rgb(255, 249, 224);
+    font-size: 1.4rem;
+}
+
+.linkToProject:hover {
+    color: #000;
+}
+
+
+/*FOOTER*/
+
+.pg__foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 3rem;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    text-align: center;
+    font-size: 1rem;
+    background: rgba(87, 16, 109, 0.164);
+}
+
+.pg__foot a {
+    text-decoration: none;
+    color: rgb(255, 249, 224);
+    letter-spacing: 0.3rem;
+}
