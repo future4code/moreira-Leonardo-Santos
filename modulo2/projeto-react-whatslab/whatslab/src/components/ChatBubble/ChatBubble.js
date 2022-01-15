@@ -19,7 +19,7 @@ const Title = styled.h3`
 `;
 
 const Texto = styled.p`
-    width: 60%;
+    width: 75%;
 `;
 
 class ChatBubble extends React.Component {
