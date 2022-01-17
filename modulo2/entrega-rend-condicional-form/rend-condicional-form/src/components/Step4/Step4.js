@@ -4,7 +4,10 @@ import styled from "styled-components";
 export default class Step4 extends React.Component {
     render() {
         return (
-            <h1></h1>
+            <div>
+                <h1>Gratidão por ter respondido este formulário</h1>
+                <h2>desejamos uma boa vida 🫀</h2>
+            </div>    
         );
     };
 };
