@@ -63,7 +63,7 @@ export default class App extends React.Component {
     return (
       <MainContainer>
         {changePage()}
-        <Button type="button" onClick={this.changeStateValue}>Próxima etapa</Button>
+        {this.state.currentStep !== 'step3' ? <Button type="button" onClick={this.changeStateValue} currentPage={this.state.currentStep}>Próxima etapa</Button> : <></>}
       </MainContainer>
     );
   };

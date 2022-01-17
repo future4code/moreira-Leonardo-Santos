@@ -24,6 +24,10 @@ const Title = styled.h2`
 `; 
 
 export default class Step1 extends React.Component {
+    state = {
+        gradeValue: ''
+    };
+
     render() {
         return (
             <Form>
@@ -39,10 +43,10 @@ export default class Step1 extends React.Component {
 
                 <label htmlFor="usrGrade">4. Qual é a sua escolaridade</label>
                 <Select name="usrGrade">
-                    <option value="EMC">Ensino médio completo</option>
-                    <option value="EMI">Ensino médio incompleto</option>
-                    <option value="ESC">Ensino superior completo</option>
-                    <option value="ESI">Ensino superior incomleto</option>
+                    <option value="EM">Ensino médio completo</option>
+                    <option value="EM">Ensino médio incompleto</option>
+                    <option value="ES">Ensino superior completo</option>
+                    <option value="ES">Ensino superior incomleto</option>
                 </Select>
             </Form>
         );
