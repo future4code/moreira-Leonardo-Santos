@@ -53,30 +53,52 @@ class App extends React.Component {
             alert('Tente outra vez!');
         });
 
+        this.setState({inputNameValue: '', inputMailValue: ''});
     };
     changePage = () => {
         this.state.currentPage === true ? this.setState({currentPage: false}) : this.setState({currentPage: true});
-
-        console.log(this.state.usersList);
     };
-    componentDidUpdate = () => {
+    // getUsers = () => {
+    //     if (!this.state.currentPage) {
+    //         const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users';
+            
+    //         const header = {
+    //             headers: {
+    //                 Authorization: "leo-christen-moreira"
+    //             }
+    //         };
+
+    //         axios.get(url, header)
+    //         .then((res) => {
+    //             return this.setState({usersList: res.data});
+    //         })
+    //         .catch((err) => {
+    //             console.log(err.res);
+    //         });
+    //     }
+    // };
+    getUsers = async () => {
         if (!this.state.currentPage) {
             const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users';
-            
+                    
             const header = {
                 headers: {
                     Authorization: "leo-christen-moreira"
                 }
             };
 
-            axios.get(url, header)
-            .then((res) => {
-                return this.setState({usersList: res.data});
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        }
+            try {
+                const res = await axios.get(url, header);
+
+                this.setState({usersList: res.data})
+            }
+            catch(err) {
+                console.log(err.res)
+            };
+        }    
+    };
+    componentDidUpdate = () => {
+        this.getUsers()
     };
     removeUser = (id) => {
 
@@ -88,15 +110,22 @@ class App extends React.Component {
             }
         };
 
-        axios.delete(url, header)
-        .then((res) => {
-            alert('Usuário deletado com sucesso!');
-        })
-        .catch((err) => {
-            console.log(this.state.userId)
-            console.log(err.message);
-            alert('Opa, algo deu errado tente outra vez');
-        });
+        const answer = window.confirm('Você gostaria mesmo de deletar esse usuário?');
+
+        if (answer) {
+            axios.delete(url, header)
+            .then((res) => {
+                alert('Usuário deletado com sucesso!');
+            })
+            .catch((err) => {
+                console.log(this.state.userId)
+                console.log(err.message);
+                alert('Opa, algo deu errado tente outra vez');
+            });
+        }
+        else {
+            alert('O usuário não foi deletado.');
+        }
 
     };
 
