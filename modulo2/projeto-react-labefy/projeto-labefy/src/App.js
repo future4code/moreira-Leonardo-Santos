@@ -18,17 +18,6 @@ const List = styled.ul`
   justify-content: space-between;
   padding-left: 0;
 
-  div{
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.5rem;
-    border: 1px solid black;
-    padding-right: 1rem;
-    box-sizing: border-box;
-  }
-
   li{
     width: 100%;
     text-align: start;
@@ -40,7 +29,40 @@ const Button = styled.button`
 `;
 const Div = styled.div`
   height: 30px;
+  width: 95%;
+  margin: 5px 0;
   border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+
+  h4{
+    padding: 15px;
+  }
+
+  audio{
+    height: 10px;
+  }
+`;
+const Form = styled.form`
+  div{
+    width: 80%;
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+const ListItems = styled.div`
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  border: 1px solid black;
+  padding-right: 1rem;
+  box-sizing: border-box;
 `;
 
 class App extends React.Component {
@@ -178,6 +200,23 @@ class App extends React.Component {
       console.log(res);
     })
     .catch((err) => {console.log(err.response)});
+
+    this.setState({newSongName: '',newSongArtist: '',newSongUrl: ''});
+  };
+  removeSong = (songId) => {
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.state.currentPlaylistId}/tracks/${songId}`;
+
+    const header = {
+      headers: {
+        Authorization: 'leo-christen-moreira'
+      }
+    };
+
+    axios.delete(url, header)
+    .then((res) => {
+      alert('Música removida da Playlist')
+    })
+    .catch((err) => {console.log(err.response)})
   };
   backToPlaylists = () => {
     this.setState({currentPage: 'addPlaylist'});
@@ -185,6 +224,10 @@ class App extends React.Component {
   componentDidUpdate = () => {
     if (this.state.showList === true) {
       this.getPlaylists();
+    }
+
+    if (this.state.currentPage === 'detailsPage') {
+      this.getPlaylistTracks(this.state.currentPlaylistId)
     }
   };
   
@@ -201,16 +244,20 @@ class App extends React.Component {
     };
     const savedPlaylists = this.state.playlists.map((playlist) => {
       return(
-        <div>
-          <li key={playlist.id} onClick={() => {this.openDetails(playlist.id, playlist.name)}}>{playlist.name} </li><button type='button' onClick={() => {this.delPlaylist(playlist.id)}}>x</button>
-        </div>
+        <ListItems key={playlist.id}>
+          <li onClick={() => {this.openDetails(playlist.id, playlist.name)}}>{playlist.name} </li><button type='button' onClick={() => {this.delPlaylist(playlist.id)}}>x</button>
+        </ListItems>
       );
     });
     const playlistTracks = this.state.currentPlaylist.map((track) => {
       return(
-        <Div>
+        <Div key={track.id}>
           <h4>{track.name}</h4>
           <p>{track.artist}</p>
+          <div>
+            <audio src={track.url} controls></audio>
+            <button type='button' onClick={() => {this.removeSong(track.id)}}>x</button>
+          </div>  
         </Div>
       );
     });
@@ -237,18 +284,24 @@ class App extends React.Component {
               <h2>{this.state.detailTitle}</h2>
               <p>{`${this.state.currentPlaylistTracksNum} música(s)`}</p>
               <h3>adicionar música à playlist:</h3>
-              <form>
-                <label htmlFor="trackName">Qual é o nome da musica? </label>
-                <input type="text" name='trackName' value={this.state.newSongName} onChange={this.onChangeMusicName}/>
+              <Form>
+                <div>
+                  <label htmlFor="trackName">Qual é o nome da musica? </label>
+                  <input type="text" name='trackName' value={this.state.newSongName} onChange={this.onChangeMusicName}/>
+                </div>
 
-                <label htmlFor="bandOrArtist">Qual é o nome da banda ou da pessoa cantora? </label>
-                <input type="text" name='bandOrArtist' value={this.state.newSongArtist} onChange={this.onChangeMusicArtist}/>
+                <div>
+                  <label htmlFor="bandOrArtist">Qual é o nome da banda ou da pessoa cantora? </label>
+                  <input type="text" name='bandOrArtist' value={this.state.newSongArtist} onChange={this.onChangeMusicArtist}/>
+                </div>
 
-                <label htmlFor="url">Qual é a URL da música? </label>
-                <input type="text" name='url' value={this.state.newSongUrl} onChange={this.onChangeMusicUrl}/>
+                <div>
+                  <label htmlFor="url">Qual é a URL da música? </label>
+                  <input type="text" name='url' value={this.state.newSongUrl} onChange={this.onChangeMusicUrl}/>
+                </div>
 
                 <button type='button' onClick={this.addTrackToPlaylist}>Salvar música</button>
-              </form>
+              </Form>
               <hr />
               <List>{playlistTracks}</List>
               <button onClick={this.backToPlaylists}>Voltar</button>
