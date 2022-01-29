@@ -3,8 +3,44 @@ import React from 'react';
 import styled from 'styled-components';
 import CreatePlaylistForm from './components/CreatePlaylistForm/CreatePlaylistForm.js';
 
+const Page = styled.div`
+  text-align: center;
+`;
 const List = styled.ul`
-  border: 1px solid black;
+  width: 85vw;
+  margin: 2rem auto;
+  border: 1px solid black; 
+  box-sizing: border-box;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0;
+
+  div{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+    border: 1px solid black;
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  li{
+    width: 100%;
+    text-align: start;
+    padding: 1rem;
+  }
+`;
+const Button = styled.button`
+  margin-top: 2rem;
+`;
+const Div = styled.div`
+  height: 30px;
+  border: 1px black solid;
 `;
 
 class App extends React.Component {
@@ -21,7 +57,6 @@ class App extends React.Component {
     newSongName: '',
     newSongArtist: '',
     newSongUrl: ''
-    
   };
 
   changeListName = (evt) => {
@@ -31,10 +66,10 @@ class App extends React.Component {
     this.setState({newSongName: evt.target.value});
   };
   onChangeMusicArtist =(evt) => {
-    this.setState({});
+    this.setState({newSongArtist: evt.target.value});
   };
   onChangeMusicUrl =(evt) => {
-    this.setState({});
+    this.setState({newSongUrl: evt.target.value});
   };
   getPlaylists = async () => {
     const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists';
@@ -71,8 +106,11 @@ class App extends React.Component {
     axios.post(url, body, header)
     .then((res) => {
       alert('Playlist adicionada');
+      
     })
     .catch((err) => {alert(err.response.data.message === 'There already is a playlist with a similiar name.' ? 'Esse nome já está sendo utilizado em outra Playlist' : 'Você precisa escolher um nome pra essa Playlist')});
+
+    this.setState({playlistName: ''});
   };
   delPlaylist = (id) => {
     const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`;
@@ -121,6 +159,8 @@ class App extends React.Component {
   addTrackToPlaylist = () => {
     const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.state.currentPlaylistId}/tracks`;
 
+    this.getPlaylistTracks(this.state.currentPlaylistId);
+
     const body = {
       "name": this.state.newSongName,
       "artist": this.state.newSongArtist,
@@ -133,6 +173,11 @@ class App extends React.Component {
       }
     };
 
+    axios.post(url, body, header)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {console.log(err.response)});
   };
   backToPlaylists = () => {
     this.setState({currentPage: 'addPlaylist'});
@@ -148,28 +193,27 @@ class App extends React.Component {
     const changeButton = () => {
       switch (this.state.showList) {
         case false:
-          return (<button type="button" onClick={this.toggleList}>Ver Playlists</button>);
+          return (<Button type="button" onClick={this.toggleList}>Ver Playlists</Button>);
       
         default:
-          return (<button type="button" onClick={this.toggleList}>Esconder lista</button>);
+          return (<Button type="button" onClick={this.toggleList}>Esconder lista</Button>);
       }
-    }
+    };
     const savedPlaylists = this.state.playlists.map((playlist) => {
       return(
-        <>
+        <div>
           <li key={playlist.id} onClick={() => {this.openDetails(playlist.id, playlist.name)}}>{playlist.name} </li><button type='button' onClick={() => {this.delPlaylist(playlist.id)}}>x</button>
-        </>
+        </div>
       );
     });
     const playlistTracks = this.state.currentPlaylist.map((track) => {
       return(
-        <li>
+        <Div>
           <h4>{track.name}</h4>
           <p>{track.artist}</p>
-        </li>
+        </Div>
       );
     });
-
     const changePages = () => {
       switch (this.state.currentPage) {
         case 'addPlaylist':
@@ -178,6 +222,7 @@ class App extends React.Component {
               <CreatePlaylistForm
                 changeListName={this.changeListName}
                 savePlaylist={this.savePlaylist}
+                inputValue={this.state.playlistName}
               />
               <div>
                 {changeButton()}
@@ -194,13 +239,13 @@ class App extends React.Component {
               <h3>adicionar música à playlist:</h3>
               <form>
                 <label htmlFor="trackName">Qual é o nome da musica? </label>
-                <input type="text" name='trackName'/>
+                <input type="text" name='trackName' value={this.state.newSongName} onChange={this.onChangeMusicName}/>
 
                 <label htmlFor="bandOrArtist">Qual é o nome da banda ou da pessoa cantora? </label>
-                <input type="text" name='bandOrArtist'/>
+                <input type="text" name='bandOrArtist' value={this.state.newSongArtist} onChange={this.onChangeMusicArtist}/>
 
                 <label htmlFor="url">Qual é a URL da música? </label>
-                <input type="text" name='url'/>
+                <input type="text" name='url' value={this.state.newSongUrl} onChange={this.onChangeMusicUrl}/>
 
                 <button type='button' onClick={this.addTrackToPlaylist}>Salvar música</button>
               </form>
@@ -216,9 +261,9 @@ class App extends React.Component {
     };
 
     return(
-      <div>
+      <Page>
         {changePages()}
-      </div>
+      </Page>
     );
   };
 };
