@@ -1,69 +1,8 @@
 import axios from 'axios';
 import React from 'react';
-import styled from 'styled-components';
+import { Page, List, Button, ListItems } from './style.js';
 import CreatePlaylistForm from './components/CreatePlaylistForm/CreatePlaylistForm.js';
-
-const Page = styled.div`
-  text-align: center;
-`;
-const List = styled.ul`
-  width: 85vw;
-  margin: 2rem auto;
-  border: 1px solid black; 
-  box-sizing: border-box;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 0;
-
-  li{
-    width: 100%;
-    text-align: start;
-    padding: 1rem;
-  }
-`;
-const Button = styled.button`
-  margin-top: 2rem;
-`;
-const Div = styled.div`
-  height: 30px;
-  width: 95%;
-  margin: 5px 0;
-  border: 1px black solid;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-right: 15px;
-
-  h4{
-    padding: 15px;
-  }
-
-  audio{
-    height: 10px;
-  }
-`;
-const Form = styled.form`
-  div{
-    width: 80%;
-    margin: 0.5rem auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-`;
-const ListItems = styled.div`
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.5rem;
-  border: 1px solid black;
-  padding-right: 1rem;
-  box-sizing: border-box;
-`;
+import DetailsPage from './pages/DetailsPage/DetailsPage.js';
 
 class App extends React.Component {
 
@@ -197,6 +136,7 @@ class App extends React.Component {
 
     axios.post(url, body, header)
     .then((res) => {
+      alert('Música adicionada na playlist')
       console.log(res);
     })
     .catch((err) => {console.log(err.response)});
@@ -249,18 +189,6 @@ class App extends React.Component {
         </ListItems>
       );
     });
-    const playlistTracks = this.state.currentPlaylist.map((track) => {
-      return(
-        <Div key={track.id}>
-          <h4>{track.name}</h4>
-          <p>{track.artist}</p>
-          <div>
-            <audio src={track.url} controls></audio>
-            <button type='button' onClick={() => {this.removeSong(track.id)}}>x</button>
-          </div>  
-        </Div>
-      );
-    });
     const changePages = () => {
       switch (this.state.currentPage) {
         case 'addPlaylist':
@@ -281,30 +209,20 @@ class App extends React.Component {
         case 'detailsPage':  
           return(
             <>
-              <h2>{this.state.detailTitle}</h2>
-              <p>{`${this.state.currentPlaylistTracksNum} música(s)`}</p>
-              <h3>adicionar música à playlist:</h3>
-              <Form>
-                <div>
-                  <label htmlFor="trackName">Qual é o nome da musica? </label>
-                  <input type="text" name='trackName' value={this.state.newSongName} onChange={this.onChangeMusicName}/>
-                </div>
-
-                <div>
-                  <label htmlFor="bandOrArtist">Qual é o nome da banda ou da pessoa cantora? </label>
-                  <input type="text" name='bandOrArtist' value={this.state.newSongArtist} onChange={this.onChangeMusicArtist}/>
-                </div>
-
-                <div>
-                  <label htmlFor="url">Qual é a URL da música? </label>
-                  <input type="text" name='url' value={this.state.newSongUrl} onChange={this.onChangeMusicUrl}/>
-                </div>
-
-                <button type='button' onClick={this.addTrackToPlaylist}>Salvar música</button>
-              </Form>
-              <hr />
-              <List>{playlistTracks}</List>
-              <button onClick={this.backToPlaylists}>Voltar</button>
+              <DetailsPage
+                detailTitle={this.state.detailTitle}
+                currentPlaylistTracksNum={this.state.currentPlaylistTracksNum}
+                newSongName={this.state.newSongName}
+                newSongArtist={this.state.newSongArtist}
+                newSongUrl={this.state.newSongUrl}
+                onChangeMusicName={this.onChangeMusicName}
+                onChangeMusicArtist={this.onChangeMusicArtist}
+                onChangeMusicUrl={this.onChangeMusicUrl}
+                addTrackToPlaylist={this.addTrackToPlaylist}
+                removeSong={this.removeSong}
+                currentPlaylist={this.state.currentPlaylist}
+                backToPlaylists={this.backToPlaylists}
+              />
             </>
           );
 
