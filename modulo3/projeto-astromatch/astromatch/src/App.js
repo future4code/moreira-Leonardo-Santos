@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import MainScreen from "./pages/MainScreen/MainScreen.js";
 import MatchesScreen from "./pages/MatchesScreen/MatchesScreen.js";
+import clear from "./services/clear.js";
 
 const pg = document.querySelector('html');
 pg.lang = 'pt-br';
@@ -12,6 +13,11 @@ const App = () => {
   const switchPages = () => {
     return currentPage === 'main' ? setCurrentPage('matches') : setCurrentPage('main');
   };
+  const clearClick = () => {
+    clear();
+    alert('Seus matches foram apagados');
+    setCurrentPage('main');
+  };
 
   const changePages = () => {
     switch (currentPage) {
@@ -19,6 +25,7 @@ const App = () => {
         return (
           <MainScreen
             changePage={switchPages}
+            clearClick={clearClick}
           />
         );
     
@@ -26,6 +33,7 @@ const App = () => {
         return(
           <MatchesScreen
             changePage={switchPages}
+            clearClick={clearClick}
           />
         );
     }
