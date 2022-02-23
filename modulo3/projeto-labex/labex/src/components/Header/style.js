@@ -38,7 +38,4 @@ export const NavBar = styled.nav`
         font-weight: 800;
         cursor: pointer;
     }
-    button:hover{
-        width: 6.5rem;
-    }
 `;

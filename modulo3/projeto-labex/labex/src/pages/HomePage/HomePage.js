@@ -11,7 +11,7 @@ const HomePage = () => {
                 <img src={promoImg} alt="rocket flying to space" />
             </div>
 
-            <p>Sua plataforma segura e intuitiva para gerenciar suas viagens</p>
+            <p>Uma plataforma segura e intuitiva para gerenciar suas viagens espaciais</p>
         </HomeContainer>
     );
 };

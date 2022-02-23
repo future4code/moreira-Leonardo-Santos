@@ -14,7 +14,7 @@ export const HomeContainer = styled.main`
     p{
         font-size: 1.25rem;
         display: block;
-        width: 55vw;
+        width: 60vw;
         margin: 0 auto;
         color: purple;
     }
