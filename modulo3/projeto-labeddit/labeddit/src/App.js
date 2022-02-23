@@ -1,11 +1,11 @@
 import React from 'react';
+import Router from './routes/Router.js';
+import './assets/css/reset.css';
 
 const App = () => {
   return (
     <>
-      <h1>Ops, Sua página ainda não existe, mas garanto que estou trabalhando nela! 
-      </h1>
-      <h2>Fique a vontade para voltar mais tarde</h2>
+      <Router/>
     </>
   );
 };
