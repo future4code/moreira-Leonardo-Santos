@@ -8,8 +8,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from "@mui/material/styles";
 import theme from '../../constants/theme.js'
+import { useNavigate } from 'react-router-dom';
+import {goToMobileMenu} from '../../routes/coordinator.js';
 
 const Header = () => {
+    const navigate = useNavigate();
+
     return(
         <ThemeProvider theme={theme}>
             <Box sx={{ flexGrow: 1 }}>
@@ -19,21 +23,20 @@ const Header = () => {
                 >
                     <Toolbar>   
                         <Typography 
-                            variant="h6" 
+                            variant="h1" 
                             component="div" 
-                            sx={{ flexGrow: 1, fontSize: '2rem'}}
+                            sx={{ flexGrow: 1, fontSize: '2rem', fontWeight: 'bold'}}
                             color='secondary'
                         >LabEddit
                         </Typography>
                         <IconButton
-                            variant='outlined'
-                            edge='end'
                             size="large"
                             color="secondary"
                             aria-label="menu"
                             sx={{ mr: 2, marginRight: -1.5}}
+                            onClick={() => goToMobileMenu(navigate)}
                         >
-                            <MenuIcon />
+                            <MenuIcon sx={{fontSize: '2.5rem'}}/>
                         </IconButton>
                         {/* <Button 
                             color="secondary"
