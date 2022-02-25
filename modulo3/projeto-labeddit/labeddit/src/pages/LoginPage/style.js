@@ -5,6 +5,7 @@ export const PageWrap = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow-y: hidden; 
 
     p{
         margin: 0.5rem 1.5rem;
@@ -17,4 +18,5 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: hidden;
 `;

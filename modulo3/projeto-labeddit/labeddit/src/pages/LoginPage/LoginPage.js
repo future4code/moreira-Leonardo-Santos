@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Footer from '../../components/Footer/Footer.js';
 import { PageWrap, Form } from './style.js';
 import Title from "../../components/Title/Title.js";
@@ -7,32 +7,27 @@ import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../constants/theme.js";
 import { primary, secondary } from "../../constants/colors.js";
-import { goToRegisterPage } from "../../routes/coordinator.js";
+import { baseUrl } from "../../constants/baseUrl.js";
+import { goToRegisterPage, goToPostsFeedPage } from "../../routes/coordinator.js";
 import { useNavigate } from "react-router-dom";
 import useForm from '../../hooks/useForm.js';
-import usePostRequirement from "../../hooks/usePostRequirement.js";
-import { baseUrl } from "../../constants/baseUrl.js";
+import usePostPutRequirement from "../../hooks/usePostPutRequirement.js";
+import { login } from "../../services/users.js";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage.js";
 
 const LoginPage = () => {
-    const [form, changeInput, clear] = useForm({email: '',password: ''});
+    const [form, changeInput, clear] = useForm({email: '', password: ''});
+    const [getToken, isLoading] = usePostPutRequirement(); 
     const navigate = useNavigate();
-    const [token, getToken] = usePostRequirement(`${baseUrl}users/login`, form); 
-
-
+    useUnprotectedPage();
     
-    const onSubmitForm = (evt) => {
+    const onSubmitForm = async (evt) => {
         evt.preventDefault();
-        login();
-        
-        const test = localStorage.getItem('token');
-        console.log(test);
 
-        clear();
-    };
-    
-    const login = () => {
-        getToken();
-        token === undefined ? console.log('num tem ainda') : localStorage.setItem('token', `${token}`);
+        const {data} = await getToken(`${baseUrl}users/login`, form);
+
+        login(data, clear, isLoading, navigate);
+        goToPostsFeedPage(navigate);
     };
 
     return(

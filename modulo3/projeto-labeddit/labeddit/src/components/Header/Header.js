@@ -16,7 +16,7 @@ const Header = () => {
 
     return(
         <ThemeProvider theme={theme}>
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1, width: '100vw' }}>
                 <AppBar 
                     position="static" 
                     color='primary'

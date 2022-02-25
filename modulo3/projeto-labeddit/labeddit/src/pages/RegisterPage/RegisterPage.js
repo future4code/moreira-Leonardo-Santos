@@ -8,24 +8,20 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../constants/theme.js";
 import { primary } from "../../constants/colors.js";
 import useForm from '../../hooks/useForm.js';
-import usePostRequirement from '../../hooks/usePostRequirement.js';
-import { baseUrl } from "../../constants/baseUrl.js";
+import usePostPutRequirement from '../../hooks/usePostPutRequirement.js';
+import { register } from "../../services/users.js";
+import { useNavigate } from "react-router-dom";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage.js";
 
 const RegisterPage = () => {
     const [form, changeInput, clear] = useForm({username:'', email: '', password:''});
-    const [token, getToken] = usePostRequirement(`${baseUrl}users/signup`, form); 
+    const [token, getToken, isLoading] = usePostPutRequirement(); 
+    const navigate = useNavigate();
+    useUnprotectedPage();
 
     const onSubmitForm = (evt) => {
         evt.preventDefault();
-        
-        signUp();
-
-        clear();
-    };
-
-    const signUp = () => {
-        getToken();
-        token === undefined ? console.log('num tem ainda') : localStorage.setItem('token', `${token}`);
+        register(form, getToken, token, clear, isLoading, navigate);
     };
 
     return(
