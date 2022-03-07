@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-const usePostPutRequirement = (url, headers) => {
+const useGetRequirement = (url, headers) => {
     const [data, setData] = useState(undefined);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -16,8 +16,8 @@ const usePostPutRequirement = (url, headers) => {
             setIsLoading(false);
             console.log(err.response);
         });
-    }, [url, headers]);
+    }, [url]);
 
     return [data, isLoading];
 };
-export default usePostPutRequirement;
+export default useGetRequirement;

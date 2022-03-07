@@ -12,16 +12,17 @@ import usePostPutRequirement from '../../hooks/usePostPutRequirement.js';
 import { register } from "../../services/users.js";
 import { useNavigate } from "react-router-dom";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage.js";
+import Header from "../../components/Header/Header.js";
 
 const RegisterPage = () => {
     const [form, changeInput, clear] = useForm({username:'', email: '', password:''});
-    const [token, getToken, isLoading] = usePostPutRequirement(); 
+    const [getToken, isLoading] = usePostPutRequirement(); 
     const navigate = useNavigate();
     useUnprotectedPage();
 
     const onSubmitForm = (evt) => {
         evt.preventDefault();
-        register(form, getToken, token, clear, isLoading, navigate);
+        register(form, getToken, clear, isLoading, navigate);
     };
 
     return(

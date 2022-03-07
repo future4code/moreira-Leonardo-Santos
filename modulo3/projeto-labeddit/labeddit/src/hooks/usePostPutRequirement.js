@@ -15,7 +15,7 @@ const usePostPutRequirement = () => {
         }
         catch (err) {
             setIsLoading(true);
-            err.response.status === 401 ? alert('Email e/ou senha invalidos') : console.log(err.response);
+            err.response.status === 401 ? alert('Email e/ou senha invalidos') : err.response.status === 409 ? alert(err.response.data) : console.log(err.response) ;
             setIsLoading(false);
         }
         finally {

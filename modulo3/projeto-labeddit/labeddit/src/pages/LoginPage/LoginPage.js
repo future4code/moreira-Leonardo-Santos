@@ -21,13 +21,9 @@ const LoginPage = () => {
     const navigate = useNavigate();
     useUnprotectedPage();
     
-    const onSubmitForm = async (evt) => {
+    const onSubmitForm = (evt) => {
         evt.preventDefault();
-
-        const {data} = await getToken(`${baseUrl}users/login`, form);
-
-        login(data, clear, isLoading, navigate);
-        goToPostsFeedPage(navigate);
+        login(getToken, form, clear, isLoading, navigate);
     };
 
     return(

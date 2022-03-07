@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,11 +8,43 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from "@mui/material/styles";
 import theme from '../../constants/theme.js'
-import { useNavigate } from 'react-router-dom';
-import {goToMobileMenu} from '../../routes/coordinator.js';
+import { useNavigate, useLocation } from 'react-router-dom';
+import {goToMobileMenu, goToRegisterPage, goToLoginPage} from '../../routes/coordinator.js';
+import { logout } from '../../services/users.js';
 
 const Header = () => {
+    const isMobile = window.innerWidth < 700;
+    const token = localStorage.getItem('token');
     const navigate = useNavigate();
+    const {pathname} = useLocation();
+    const [buttonName, setButtonName] = useState('Logout');
+
+    const changeButton = () => {
+        token ? setButtonName('Logout') : setButtonName('cadastre-se');
+    }
+
+    useEffect(() => {
+        changeButton(); 
+    }, [token]);
+
+
+    const rightAction = () => {
+
+        if (token) {
+            logout(navigate);
+        }    
+        else if (pathname === '/cadastro') {
+            setButtonName('Cadastre-se');
+            goToLoginPage(navigate);
+        }
+        else if (pathname === '/') {
+            setButtonName('Login');
+            goToRegisterPage(navigate);
+        }
+    };
+    
+    const changeMenu = ( isMobile ? <IconButton size="large" color="secondary" aria-label="menu" sx={{ mr: 2, marginRight: -1.5}} onClick={() => {goToMobileMenu(navigate)}}><MenuIcon sx={{fontSize: '2.5rem'}}/></IconButton> : <Button color="secondary" variant='outlined' onClick={() => rightAction()} >{buttonName}</Button> )
+
 
     return(
         <ThemeProvider theme={theme}>
@@ -29,20 +61,7 @@ const Header = () => {
                             color='secondary'
                         >LabEddit
                         </Typography>
-                        <IconButton
-                            size="large"
-                            color="secondary"
-                            aria-label="menu"
-                            sx={{ mr: 2, marginRight: -1.5}}
-                            onClick={() => goToMobileMenu(navigate)}
-                        >
-                            <MenuIcon sx={{fontSize: '2.5rem'}}/>
-                        </IconButton>
-                        {/* <Button 
-                            color="secondary"
-                            variant='outlined'
-                        >Cadastrar-se
-                        </Button> */}
+                        {changeMenu}
                     </Toolbar>
                 </AppBar>
             </Box>
