@@ -1,0 +1,20 @@
+{
+  "name": "exercicio1",
+  "version": "1.0.0",
+  "description": "parte dos exercícios de introdução a Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "clear && tsc ./src/index.ts && node ./src/index.js"
+  },
+  "keywords": [
+    "typescript",
+    "backend",
+    "introdução"
+  ],
+  "author": "Leona Christen Macedo dos Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.23"
+  }
+}
