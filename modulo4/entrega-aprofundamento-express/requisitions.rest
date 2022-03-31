@@ -1,0 +1,44 @@
+GET http://localhost:3003/
+content-type: application/json
+
+{
+    "entry": "ping"
+}
+
+###
+
+GET http://localhost:3003/todos
+Content-Type: application/json
+
+{
+    "status": true
+}
+
+###
+
+GET http://localhost:3003/todos/1
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/todos/new
+Content-Type: application/json
+
+{
+    "title": "get activities done",
+    "status": false
+}
+
+###
+
+PUT http://localhost:3003/todos/8/status
+Content-Type: application/json
+
+{
+    "status": false
+}
+
+###
+
+DELETE http://localhost:3003/todos/3/del
+Content-Type: application/json
