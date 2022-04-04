@@ -1,0 +1,14 @@
+GET http://localhost:3003/users
+Content-Type: application/json
+###
+
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "name": "Juquinha",
+    "cpf": "12311312321",
+    "birth": "09/08/2010"
+}
+
+###
