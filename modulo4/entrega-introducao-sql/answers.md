@@ -242,3 +242,42 @@ VALUES(
 *****
 
 ### Exercício 6
+
+a)
+```
+SELECT id, name, grade FROM movies WHERE id = 002;
+```
+
+b)
+```
+SELECT * FROM movies WHERE name = "Deserto Particular";
+```
+
+c)
+```
+SELECT id, name, sinopsis FROM movies WHERE grade >= 7;
+```
+*****
+
+### Exercício 7
+
+a)
+```
+SELECT * FROM movies WHERE name LIKE "%vida%";
+```
+
+b)
+```
+SELECT * FROM movies WHERE name LIKE "%Particular%" OR sinopsis LIKE "%Particular%";
+```
+
+c)
+```
+SELECT * FROM movies WHERE launch_date < "2022-04-05";
+```
+
+d)
+```
+SELECT * FROM movies WHERE launch_date < "2022-04-05" AND (name LIKE "%Particular%" OR sinopsis LIKE "%Particular%") AND grade > 7;
+```
+*****
