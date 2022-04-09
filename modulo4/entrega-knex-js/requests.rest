@@ -1,4 +1,23 @@
 GET http://localhost:3003/actor?name=Glória
 Content-Type: application/json
+###
 
+GET http://localhost:3003/actor/female
+Content-Type: application/json
+###
+
+GET http://localhost:3003/actor/salary/average?gender=female
+Content-Type: application/json
+###
+
+PUT http://localhost:3003/actor/001
+Content-Type: application/json
+
+{
+    "salary": 11
+}
+###
+
+DELETE http://localhost:3003/actor/delete/001
+Content-Type: application/json
 ###

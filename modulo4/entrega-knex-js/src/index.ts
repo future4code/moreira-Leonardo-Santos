@@ -1,6 +1,11 @@
 import app from './app';
 import connection from './connection';
 
+// Exercício 3
+/* a)
+ */
+
+
 // Exercício 1
 /* a)
  * A resposta que chega do metodo raw é um Promise contendo
@@ -28,4 +33,67 @@ app.get('/actor', async (req, res) => {
 });
 
 /* c) 
- */
+*/
+app.get('/actor/:gender', async (req, res) => {
+    try {
+        const {gender} = req.params;
+
+        // usando knex.raw()
+        const result = await connection.raw(`
+        SELECT COUNT(*) AS "${gender}" FROM actors WHERE gender = "${gender}" ORDER BY gender;
+        `);
+        res.status(200).send(result[0]);
+        
+    } 
+    catch(err){
+        console.log(err);
+    };
+});
+
+// Exercício 2
+/* c) - coloquei aqui por ser um GET
+*/
+app.get('/actor/salary/average', async (req, res) => {
+    try {
+        const {gender} = req.query;
+
+        const result = await connection('actors').avg("salary as media salarial").where('gender', gender as string);
+
+        res.status(200).send(result);
+    } 
+    catch(err){
+        console.log(err);
+    }
+});
+
+/* a)
+*/
+app.put('/actor/:id', async (req, res) => {
+    try{
+        const {id} = req.params;
+        const {salary} = req.body;
+
+        // usando queryBuilder
+
+        await connection('actors').where({id: id}).update({salary: Number(salary)});
+        
+        res.status(200).send('Salary changed');
+    }
+    catch(err){
+        console.log(err);
+    };    
+});
+
+/* b)
+*/
+app.delete('/actor/delete/:id', async (req, res) => {
+    try {
+        const {id} = req.params;
+
+        await connection('actors').where('id', id).del();
+        res.status(200).send('actor deleted');
+    } 
+    catch(err){
+        console.log(err);
+    }
+});
