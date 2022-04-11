@@ -4,7 +4,30 @@ import connection from './connection';
 // Exercício 3
 /* a)
  */
+app.get('/actor/:id', async (req, res) => {
+    try {
+        const {id} = req.params;
+        const result = await connection('actors').where('id', id);
 
+        res.status(200).send(result);
+    } 
+    catch(err: any){
+        res.status(400).send({message: err.message})
+    };
+});
+
+/* b)
+ */
+app.get('/actor/by/gender', async (req, res) => {
+    try{
+        const {gender} = req.query;
+        const result = await connection('actors').where('gender', `${gender}`).count(`* as ${gender}`);
+        res.status(200).send(result);
+    }
+    catch(err: any){
+        res.status(400).send({message: err.message})
+    };    
+});
 
 // Exercício 1
 /* a)
@@ -14,7 +37,7 @@ import connection from './connection';
 
 /* b) 
  */
-app.get('/actor', async (req, res) => {
+app.get('/actor/where/name', async (req, res) => {
     try{
         // usando knex.raw():
         const {name} = req.query;
@@ -24,7 +47,7 @@ app.get('/actor', async (req, res) => {
         // );
         
         // usando QueryBuilder
-        const result = await connection('actors').whereLike('name', `%${name}%`).select();
+        const result = await connection('actors').whereLike('name', `%${name}%`);
         res.status(200).send(result);     
     }
     catch(err){
@@ -34,7 +57,7 @@ app.get('/actor', async (req, res) => {
 
 /* c) 
 */
-app.get('/actor/:gender', async (req, res) => {
+app.get('/actor/gender/:gender', async (req, res) => {
     try {
         const {gender} = req.params;
 
@@ -68,10 +91,9 @@ app.get('/actor/salary/average', async (req, res) => {
 
 /* a)
 */
-app.put('/actor/:id', async (req, res) => {
+app.put('/actor', async (req, res) => {
     try{
-        const {id} = req.params;
-        const {salary} = req.body;
+        const {id, salary} = req.body;
 
         // usando queryBuilder
 

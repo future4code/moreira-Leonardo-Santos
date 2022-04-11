@@ -1,8 +1,16 @@
-GET http://localhost:3003/actor?name=Glória
+GET http://localhost:3003/actor/where/name?name=Viola
 Content-Type: application/json
 ###
 
-GET http://localhost:3003/actor/female
+GET http://localhost:3003/actor/by/gender?gender=male
+Content-Type: application/json
+###
+
+GET http://localhost:3003/actor/gender/female
+Content-Type: application/json
+###
+
+GET http://localhost:3003/actor/003
 Content-Type: application/json
 ###
 
@@ -10,10 +18,15 @@ GET http://localhost:3003/actor/salary/average?gender=female
 Content-Type: application/json
 ###
 
-PUT http://localhost:3003/actor/001
+GET http://localhost:3003/actor/002
+Content-Type: application/json
+###
+
+PUT http://localhost:3003/actor
 Content-Type: application/json
 
 {
+    "id": "002",
     "salary": 11
 }
 ###
