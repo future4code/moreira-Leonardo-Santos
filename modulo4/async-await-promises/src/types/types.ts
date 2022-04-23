@@ -3,3 +3,9 @@ export type User = {
     name: string,
     email: string
 };
+
+export type News = {
+    "title": string,
+    "content": string,
+    "date": number    
+}
