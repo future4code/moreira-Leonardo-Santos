@@ -1,10 +1,8 @@
 export type Address = { 
-    cep: string,
-    rua: string,
-    complemento: string,
+    logradouro: string,
     bairro: string,
-    localidade: string,
-    uf: string
+    cidade: string,
+    estado: string
 };
 
 export type AddressRaw = {
@@ -18,4 +16,12 @@ export type AddressRaw = {
     gia: string,
     ddd: string,
     siafi: string
-}
+};
+
+export type user = {
+    id: string
+    name: string
+    nickname: string
+    email: string
+    address: string
+};

@@ -1,13 +1,20 @@
-import { Address } from "../types/types";
+import { Address, AddressRaw } from "../types/types";
 import { Request, Response } from "express";
+import getRequest from "../services/getRequest";
+import baseUrl from "../constants/baseUrl";
+import toAddress from "../functions/toAddress";
 
-const getAddressInfo = (req: Request, res: Response): Address => {
+
+// Exercício 1
+const getAddressInfo = async (req: Request, res: Response): Promise<void> => {
     try {
-       const result = 'something'; 
+        const {cep} = req.params;
+        const response: AddressRaw = await getRequest(`${baseUrl}${cep}/json/`);
+        const result: Address = toAddress(response);
+        res.status(200).send(result);
     } 
     catch (error) {
         res.status(500).send('Internal error');
     }
-
-    return;
 }
+export default getAddressInfo;
