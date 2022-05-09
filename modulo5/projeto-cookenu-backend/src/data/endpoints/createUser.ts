@@ -8,7 +8,7 @@ export default async function createUser(
 ): Promise<void> {
    try {
 
-      const { name, nickname, email, address, cep, number, complement} = req.body
+      const { name, nickname, email, address, cep, number } = req.body
 
       if (!name || !nickname || !email || !address || !cep || !number) {
          res.statusCode = 422
@@ -26,10 +26,8 @@ export default async function createUser(
    } catch (error: any) {
 
       if (typeof error === "string") {
-
          res.send(error)
       } else {
-         
          console.log(error.sqlMessage || error.message);
          res.status(500).send("Ops! Um erro inesperado ocorreu =/")
       }
