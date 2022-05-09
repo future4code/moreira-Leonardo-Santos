@@ -1,0 +1,210 @@
+  123  mkdir entrega1 && open entrega1
+  124  cd entrega1
+  125  ls -lah
+  126  rm assassinato-na-linha-de-comando.zip
+  127  ls -lah
+  128  cd assassinato-na-linha-de-comando
+  129  ls -lah
+  130  cat README.md
+  131  less README.md
+  132  ls -lah
+  133  less inicio
+  134  cd misterio
+  135  ls -lah
+  136  grep PISTA cena-do-crime
+  137  grep Annabel cena-do-crime
+  138  grep 'cabelo loiro' cena-do-crime
+  139  ls -lah
+  140  ls -lah associacoes
+  141  less AAA
+  142  cd associacoes
+  143  less AAA
+  144  grep Annabel AAA
+  145  grep Annabel Biblioteca_da_Cidade
+  146  grep Annabel Delta_SkyMiles
+  147  grep Annabel Museu_da_História_do_Bash
+  148  ls -lah
+  149  cd ..
+  150  ls -lah
+  151  grep Annabel pessoas
+  152  less pessoas
+  153  grep 183 pessoas
+  154  grep Brian cena-do-crime
+  155  grep Brian entrevistas
+  156  cd associacoes
+  157  grep Brian AAA
+  158  grep Brian Biblioteca_da_Cidade
+  159  grep Brian Delta_SkyMiles
+  160  grep Brian Museu_da_História_do_Bash
+  161  cd ..
+  162  cd entrevistas
+  163  ls -lah
+  164  ls -la
+  165  cd ..
+  166  less cena-do-crime
+  167  ls -lah
+  168  head -25 pessoas
+  169  head -25 automoveis
+  170  grep 1,83 automoveis
+  171  grep 1,83 automoveis -B4
+  172  touch suspeitos-por-altura.txt && vi suspeitos-por-altura.txt
+  173  vi suspeitos-por-altura.txt
+  174  ls -lah
+  175  head -10 suspeitos-por-altura.txt
+  176  grep "Adrianti Tsirekidze" pessoas
+  177  grep "Bianca Al-Attiya" pessoas
+  178  grep "Bianca Al-Attiya" suspeitos-por-altura.txt -A50
+  179  ls -lah
+  180  touch suspeitos-sex-masc.txt
+  181  grep "Peter Ochoa" pessoas
+  182  grep "Oleksiy Ferrer" pessoas
+  183  grep "" pessoas
+  184  grep "Bianca Al-Attiya" suspeitos-por-altura.txt -A50
+  185  grep "Marianne Li" pessoas
+  186  grep "Annabel" automoveis -A1
+  187  grep "Annabel Fuglsang" pessoas
+  188  ls -lah
+  189  cd ruas
+  190  la -lah
+  191  ls -lah
+  192  vi Rua Haley
+  193  echo Rua Haley
+  194  cat Rua_Haley
+  195  less Rua Haley
+  196  less Rua_Haley
+  197  head -n 176 Rua_Haley | tail -n 1 
+  198  ls -lah
+  199  cd ..
+  200  ls -lah
+  201  cd entrevistas
+  202  cat #871877
+  203  ls -lah
+  204  cat entrevista-871877
+  205  cd ..
+  206  grep Anabelle pessoas
+  207  grep Annabel pessoas
+  208  grep Brian pessoas
+  209  head -n 176 ruas/Harbor_Point_Boulevard | tail -n 1 
+  210  grep "Bianca Al-Attiya" suspeitos-por-altura.txt -A50
+  211  grep "Emiliano Wenk" pessoas
+  212  grep "Rena Jankovic" pessoas
+  213  grep "Trey Kuczko" pessoas
+  214  grep "Emma Buckman" pessoas
+  215  grep "Anders Correa" pessoas
+  216  grep "Anders Correa" suspeitos-por-altura.txt -A50
+  217  grep "Rafaela Moudatir" pessoas
+  218  grep "Ashley Tymoshchenko" pessoas
+  219  grep "Petar Bauwens" pessoas
+  220  grep "Mihail Flanigan" pessoas
+  221  grep "Marouen Tatari" pessoas
+  222  grep "Pierre-Alexis Steinegger" pessoas
+  223  grep "Pierre-Alexis Steinegger" suspeitos-por-altura.txt -A50
+  224  grep "Nicola Chan" pessoas
+  225  grep "Richard Hybois" pessoas
+  226  grep "Lijiao Fumic" pessoas
+  227  grep "Ates Wenger" pessoas
+  228  grep "Erasmus Perez" pessoas
+  229  grep "Bastian Horvat-Panda" pessoas
+  230  grep "Roman Strajhar" pessoas
+  231  grep "Roman Strajhar" suspeitos-por-altura.txt -A50
+  232  grep "Jitka Mottram" pessoas
+  233  grep "Tomasz Mun" pessoas
+  234  grep "Tervel Pilipenko" pessoas
+  235  grep "Luc Reyes" pessoas
+  236  grep "Mathieu Pigot" pessoas
+  237  grep "Diego Dahlkvist" pessoas
+  238  grep "Maksim Chibosso" pessoas
+  239  grep "Kristina Sokhiev" pessoas
+  240  grep "Kristina Sokhiev" suspeitos-por-altura.txt -A50
+  241  grep "Dilshod Allen" pessoas
+  242  grep "Laurence Hirata" pessoas
+  243  grep "Bruno Tomas" pessoas
+  244  grep "Andrei Delattre-Demory" pessoas
+  245  grep "Niki Grangeon" pessoas
+  246  grep "Tamas Fredericks" pessoas
+  247  grep "Luka Begu" pessoas
+  248  grep "Luka Begu" suspeitos-por-altura.txt -A50
+  249  grep "Bogdan Zavadova" pessoas
+  250  grep "Christopher Armstrong" pessoas
+  251  grep "Jaromir Lawrence" pessoas
+  252  grep "Juan Oiwa" pessoas
+  253  grep "Luka Begu" suspeitos-por-altura.txt -A50
+  254  grep "Massimo Groot" pessoas
+  255  grep "Ebrahim Baggaley" pessoas
+  256  grep "Giulia Freden" suspeitos-por-altura.txt -A60
+  257  grep "Alejandro Abdi" pessoas
+  258  grep "Sena Pietrus" pessoas
+  259  grep "Tetsuya Tereshchuk" pessoas
+  260  grep "Seongeun Magdanis" pessoas
+  261  grep "Kyung Steffensen" pessoas
+  262  grep "Kyung Steffensen" suspeitos-por-altura.txt -A60
+  263  ls -lah
+  264  cd ruas 
+  265  ls -la
+  266  head -n 326 Travessa_Tennis | tail -n 1 
+  267  head -n 326 Travessa_Tennis | tail -n 1 
+  268  cd ..
+  269  grep -A 5 "L337" automoveis
+  270  grep "Jacqui Maher" pessoas
+  271  grep "Matt Waite" pessoas
+  272  grep "Joe Germuska" pessoas
+  273  grep "Jeremy Bowers" pessoas
+  274  cd ruas 
+  275  head -n 79 Rua_Alpine | tail -n 1 
+  276  head -n 275 Rua_Plainfield | tail -n 1 
+  277  head -n 284 Travessa_Dunstable | tail -n 1 
+  278  cd ..
+  279  ls -lah
+  280  mkdir suspeitos && rm suspeitos-por-altura.txt && mv suspeitos-sex-masculino.txt suspeitos
+  281  ls -lah
+  282  ls suspeitos
+  283  mv suspeitos-sex-masc.txt suspeitos
+  284  ls -lah
+  285  cat suspeitos/suspeitos-sex-masc.txt
+  286  cat entrevistas/entrevista-862173
+  287  grep Waite automoveis
+  288  grep Waite automoveis -B3 | -A2
+  289  grep Waite automoveis -B3 -A2
+  290  cat entrevistas/entrevista-29741223
+  291  cat entrevistas/entrevista-9620713
+  292  grep Bowers automoveis -B3 -A2
+  293  grep Bowers cena-do-crime -B3 -A2
+  294  ls -lah
+  295  grep Bowers associacoes/AAA
+  296  grep Bowers associacoes/Biblioteca_da_Cidade
+  297  grep Bowers associacoes/Delta_SkyMiles
+  298  grep Bowers associacoes/Museu_da_História_do_Bash
+  299  ls -lah
+  300  cat suspeitos/suspeitos-sex-masc.txt
+  301  echo "Jeremy Bowers\tM\t34\tTravessa Dunstable, linha 284 entrevista-9620713" PRINCIPAL_SUSPEITO_POSSIVEL_CULPADO.txt
+  302  echo "Jeremy Bowers\tM\t34\tTravessa Dunstable, linha 284 entrevista-9620713" > PRINCIPAL_SUSPEITO_POSSIVEL_CULPADO.txt
+  303  cat PRINCIPAL_SUSPEITO_POSSIVEL_CULPADO.txt
+  304  history
+  305  man history
+  306  history -help
+  307  history -h
+  308  history --help
+  309  history man
+  310  man history
+  311  echo history > historico-de-comandos.txt
+  312  cat historico-de-comandos.txt
+  313  rm historico-de-comandos.txt
+  314  history
+  315  more history
+  316  history -more
+  317  history more
+  318  cd
+  319  ls -lah
+  320  cat .zsh_history
+  321  ls -lah
+  322  cd .zsh_sessions
+  323  ls -lah
+  324  cat E4E13668-9AA1-46D3-AC80-37397037EBC0.history
+  325  ls -lah
+  326  history
+  327  history | grep 1
+  328  history 1
+  329  history 1
+  330  ls -lah
+  331  cd
+  332  cd Desktop/Labenu/modulo1/entrega1/assassinato-na-linha-de-comando && touch historico-de-comandos.txt

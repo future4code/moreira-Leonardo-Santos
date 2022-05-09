@@ -1,0 +1,12 @@
+GET http://localhost:3003/users?name=a&type=teacher&filter=id&order=&size=2&page=1
+Content-Type: application/json
+###
+GET http://localhost:3003/users/operations
+Content-Type: application/json
+###
+GET http://localhost:3003/types?type=teach&name=a&order=
+Content-Type: application/json
+###
+GET http://localhost:3003/users/fivebyfive/pg?page=3
+Content-Type: application/json
+###

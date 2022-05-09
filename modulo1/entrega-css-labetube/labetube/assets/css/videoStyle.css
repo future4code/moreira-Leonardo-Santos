@@ -1,0 +1,155 @@
+/*VARIABLES*/
+
+:root {
+    --head-n-foot-back-color: rgb(151, 6, 151);
+    --title-color: rgb(255, 181, 43);
+    --main-back-color: rgb(250, 246, 232);
+    --subtitle-color: rgb(98, 2, 98);
+    --text-color: rgba(29, 29, 29, 0.883);
+}
+
+
+/*APPLY-TO-ALL*/
+
+.pg {
+    background: var(--main-back-color);
+    overflow: hidden;
+}
+
+.links {
+    color: var(--title-color);
+    text-decoration: none;
+}
+
+.titles {
+    color: var(--title-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.subtitles {
+    font-size: 1.8rem;
+}
+
+.texts {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+}
+
+
+/*HEADER*/
+
+.pg__head {
+    width: 100vw;
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--head-n-foot-back-color);
+    position: fixed;
+    top: 0;
+}
+
+.head__title {
+    display: flex;
+    font-size: 2.5rem;
+    padding: 0.75rem;
+}
+
+.head__icon,
+.head__searchBar {
+    margin-right: 0.75rem;
+}
+
+.head__barAndBtn {
+    display: flex;
+    padding: 0.75rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+}
+
+.head__searchBar {
+    border: none;
+    border-radius: 0.4rem;
+    width: 12rem;
+    outline: none;
+}
+
+.head__searchBar:focus {
+    border-bottom: var(--title-color) 3px solid;
+}
+
+.head__btn {
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    background: var(--title-color);
+    color: var(--head-n-foot-back-color);
+    font-size: 1.035rem;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+}
+
+.head__btn:hover {}
+
+
+/*MAIN-CONTENT*/
+
+.pg__mainContent {
+    margin: 6rem auto;
+}
+
+.container {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    width: 99%;
+}
+
+.video {
+    width: 100%;
+    height: 70vh;
+}
+
+.mainContent__title {
+    margin-bottom: 2rem;
+    align-self: flex-start;
+}
+
+
+/*FOOTER*/
+
+.pg__foot {
+    width: 100vw;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--head-n-foot-back-color);
+    position: fixed;
+    bottom: 0;
+}
+
+.foot__text {
+    color: var(--title-color);
+    font-size: 1.075rem;
+    letter-spacing: 0.1rem;
+}
+
+.icon {}
+
+.foot__links {}
+
+@media screen and (max-width: 426px) {
+    .pg__head {
+        flex-direction: column;
+        height: 8rem;
+        justify-content: space-around;
+    }
+    .pg__mainContent {
+        margin-top: 10rem;
+    }
+    .pg__foot {
+        height: 4rem;
+        margin-top: 5rem;
+        text-align: center;
+    }
+}

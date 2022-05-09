@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "35.226.146.116",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Labenu",
+            "database": "moreira-21712506-leo-santos",
+            "username": "21712506-leo-santos",
+            "password": "kV83P$ahCv5W3JNfUYK5"
+        }
+    ]
+}

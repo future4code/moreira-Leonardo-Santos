@@ -1,0 +1,3 @@
+# Aprendizados da semana
+
+Essa semana tivemos os primeiros contatos com **Terminal** e conceitos como **GUI** e **CLI**, assim como a ferramenta de **versionamento** de **código fonte** o **GIT** e o gerenciador de repositórios remotos **GitHub**. E na parte menos técnica aprendemos e conhecemos a **didática** e as **ferramentas**, que poderemos utilizar para entrar em contato com a equipe, da Labenu.

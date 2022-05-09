@@ -1,0 +1,17 @@
+{
+  "name": "entrega-node-package",
+  "version": "1.0.0",
+  "description": "exercícios propostos no Notion da turma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "clear && node ./printNameAndAge.js"
+  },
+  "keywords": [
+    "backend",
+    "node",
+    "js"
+  ],
+  "author": "Leo Christen",
+  "license": "ISC"
+}
