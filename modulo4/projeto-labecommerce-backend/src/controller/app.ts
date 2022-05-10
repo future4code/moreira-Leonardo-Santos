@@ -13,7 +13,7 @@ app.use(cors());
 const server = app.listen(process.env.DB_PORT || 3003, () => {
     if (server) {
         const address: AddressInfo = server.address() as AddressInfo;
-        console.log(`The server is running in ${address.port}`); 
+        console.log(`The server is running in http://localhost:${address.port}`); 
     }
     else {
         console.log('Something went wrong, prease try restart the server');

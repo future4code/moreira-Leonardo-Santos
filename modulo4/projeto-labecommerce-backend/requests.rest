@@ -1,0 +1,12 @@
+POST http://localhost:3306/users
+Content-Type: application/json
+
+{
+    "name": "Leona",
+    "email": "leo.bla@bluble.com",
+    "password": "nandainwndawnd"
+}
+###
+GET http://localhost:3306/users
+Content-Type: application/json
+###
