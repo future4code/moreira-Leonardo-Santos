@@ -16,7 +16,7 @@ export const insertUser = (user: User): void => {
     return;
 };
 
-export const getAllUsers = () => {
-    const users = getUserDataBase();
+export const getAllUsers = async () => {
+    const users = await getUserDataBase();
     return users;
 };

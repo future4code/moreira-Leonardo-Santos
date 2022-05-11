@@ -2,11 +2,35 @@ POST http://localhost:3306/users
 Content-Type: application/json
 
 {
-    "name": "Leona",
-    "email": "leo.bla@bluble.com",
+    "name": "Leona christen",
+    "email": "Blesczsac.bla@bluble.com",
     "password": "nandainwndawnd"
 }
 ###
 GET http://localhost:3306/users
+Content-Type: application/json
+###
+POST http://localhost:3306/products
+Content-Type: application/json
+
+{
+    "name": "Produto bacanudo 3",
+    "price": 200.50,
+    "image_url": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+}
+###
+GET http://localhost:3306/products
+Content-Type: application/json
+###
+POST http://localhost:3306/purchases
+Content-Type: application/json
+
+{
+    "user_id": "3fd75622-3475-406d-a97a-3cd287c2a4ee",
+    "product_id": "b6e6cbc2-cc36-44cb-85d5-5861608d7464",
+    "quantity": 6
+}
+###
+GET http://localhost:3306/users/3fd75622-3475-406d-a97a-3cd287c2a4ee/purchases
 Content-Type: application/json
 ###
