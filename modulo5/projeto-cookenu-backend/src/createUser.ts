@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import connection from "../connection/connection";
-import { user } from "../Types/types";
+import connection from "./controller/connection";
+import { user } from "./Models/types";
 
 export default async function createUser(
    req: Request,
