@@ -8,7 +8,17 @@ export class Migrations extends BaseDatabase {
   public createTables = () =>
     this.connection
       .raw(`
-         
+         CREATE TABLE IF NOT EXISTS mama_lelo_pizzas(
+           id VARCHAR(255) PRIMARY KEY,
+           name VARCHAR(255) UNIQUE NOT NULL,
+           price FLOAT NOT NULL
+         );
+
+         CREATE TABLE IF NOT EXISTS mama_lelo_orders(
+           id VARCHAR(255) PRIMARY KEY,
+           pizza VARCHAR(255) NOT NULL,
+           quantity FLOAT NOT NULL
+         )
       `)
       .then(() => {
         console.log("Tabelas criadas");
