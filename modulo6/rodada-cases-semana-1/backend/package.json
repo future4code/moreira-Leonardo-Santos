@@ -1,14 +1,17 @@
 {
   "name": "template-back-end-completo",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.15.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "clear && ts-node-dev ./src/index.ts",
-    "migrations": "clear && tsnd ./src/data/migrations.ts",
-    "build": "clear && tsc",
-    "start": "clear && tsc && node ./build/src/index.js",
-    "test": "clear && jest"
+    "dev": "ts-node-dev ./src/index.ts",
+    "migrations": "tsnd ./src/data/migrations.ts",
+    "build": "tsc",
+    "start": "node ./build/src/index.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",

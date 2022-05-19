@@ -9,8 +9,8 @@ export default class PizzasData extends BaseDatabase{
         try {
             await this.connection(this.table).insert({
                 id: item.getId(),
-                pizza: item.getName(),
-                quantity: item.getPrice() 
+                name: item.getName(),
+                price: item.getPrice() 
             });    
         } 
         catch (error) {
