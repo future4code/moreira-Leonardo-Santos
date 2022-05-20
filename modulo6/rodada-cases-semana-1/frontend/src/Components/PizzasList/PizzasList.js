@@ -5,23 +5,22 @@ import baseUrl from '../../constants/baseUrl.js';
 const PizzasList = () => {
     const [pizzas, setPizzas] = useState([]);
     const [makeRequest, isLoading] = useRequest();
-
+    
     const getPizzas = async () => {
         const pizzasFromBase = await makeRequest( "get", `${baseUrl}pizzas`);
-
-        console.log(pizzasFromBase)
-        setPizzas(pizzas);
+        
+        setPizzas(pizzasFromBase);
     };
 
     useEffect(() => {
         getPizzas();
     }, []);
-
+    
     const mountPizzas = pizzas.map((pizza) => {
         return (
-            <li>
+            <li key={pizza.id}>
                 <p>{pizza.name}</p>
-                <p>{pizza.price}</p>
+                <p>{`$${String(pizza.price)}`}</p>
             </li>
         );
     });
@@ -29,7 +28,7 @@ const PizzasList = () => {
     return (
         <>
             <h2>Pizzas:</h2>
-            <ul>{mountPizzas}</ul>
+            {isLoading ? <h3>Loading...</h3> : <ul>{mountPizzas}</ul>}
         </>
     );
 };

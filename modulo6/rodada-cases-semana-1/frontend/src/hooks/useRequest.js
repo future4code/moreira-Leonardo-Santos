@@ -7,10 +7,12 @@ const useRequest = () => {
   const makeRequest = async (method, url, body, headers) => {
     setIsLoading(true);
     try {
-      const { data } = await axios[`${method}`](url, body, headers);
+      const {data} = await axios[`${method}`](url, body, headers);
       setIsLoading(false);
-      console.log(data);
-      return data;
+      
+      const trueData = data.data;
+
+      return trueData;
     } catch (err) {
       setIsLoading(false);
       return err.response;
