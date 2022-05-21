@@ -15,7 +15,7 @@ const useRequest = () => {
       return trueData;
     } catch (err) {
       setIsLoading(false);
-      return err.response;
+      console.log(err.response);
     }
   };
 

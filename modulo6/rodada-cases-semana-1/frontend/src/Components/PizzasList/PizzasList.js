@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from "react";
-import useRequest from "../../hooks/useRequest.js";
-import baseUrl from '../../constants/baseUrl.js';
+import React, { useContext, useEffect } from "react";
+import GlobalContext from "../../Global/GlobalContext";
+import { StyledContainer } from "./style";
+
 
 const PizzasList = () => {
-    const [pizzas, setPizzas] = useState([]);
-    const [makeRequest, isLoading] = useRequest();
-    
-    const getPizzas = async () => {
-        const pizzasFromBase = await makeRequest( "get", `${baseUrl}pizzas`);
-        
-        setPizzas(pizzasFromBase);
-    };
+
+    const {getPizzas, pizzas, isLoading, addToCart} = useContext(GlobalContext);
 
     useEffect(() => {
         getPizzas();
@@ -19,8 +14,10 @@ const PizzasList = () => {
     const mountPizzas = pizzas.map((pizza) => {
         return (
             <li key={pizza.id}>
-                <p>{pizza.name}</p>
-                <p>{`$${String(pizza.price)}`}</p>
+                <div onClick={() => addToCart(pizza)}>
+                    <p>{pizza.name}</p>
+                    <p>{`$${String(pizza.price)}`}</p>
+                </div>    
             </li>
         );
     });

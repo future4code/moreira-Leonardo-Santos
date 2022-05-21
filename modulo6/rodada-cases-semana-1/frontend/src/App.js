@@ -1,47 +1,20 @@
-import React, { useState } from 'react';
-import OrdersList from './Components/OrdersList/OrdersList';
-import PizzasList from './Components/PizzasList/PizzasList';
+import React, { useContext } from 'react';
+import GlobalContext from './Global/GlobalContext';
+import { StyledFixed, StyledMain } from './style';
 
 function App() {
-  const [currPage, setCurrPage] = useState('home');
-
-  const showPizzas = () => {
-    setCurrPage('pizzas');
-  };
-
-  const showOrders = () => {
-    setCurrPage('orders');
-  };
-
-  const pageHandler = () => {
-    switch (currPage) {
-      case 'pizzas':
-        return(
-          <PizzasList/>
-        );
-      case 'orders':
-        return(
-          <OrdersList/>
-        );
-    
-      default:
-        return(
-          <>
-            <h1>Mama Lelo's Pizza</h1>
-            <h2>Bem vinde! faça seu pedido</h2>
-          </>
-        );
-    }
-  };
+  const {showPizzas, showOrders, pageHandler, goToHome} = useContext(GlobalContext);
 
   return (
-    <>
-      {pageHandler()}
-      <div>
+    <StyledMain>
+      <StyledFixed>
+        <h1 onClick={goToHome}>Mama Lelo's <span>🍕</span></h1>
+
         <button type="button" onClick={showPizzas}>Show Pizzas</button>
         <button type="button" onClick={showOrders}>Show Orders</button>  
-      </div>     
-    </>
+      </StyledFixed>     
+      {pageHandler()}
+    </StyledMain>
   );
 }
 
